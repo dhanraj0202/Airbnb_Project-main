@@ -104,7 +104,7 @@ app.use("/listings/:id/reviews", reviewsRouter);
 
    
 app.all("*", (req, res, next)=>{
-    next(new ExpressError(404, "Page not found"))
+    next(new ExpressError(404, "/listing"))
 })
 app.use((err, req, res, next) =>{
     let {statusCode=500, message="something went wrong!"} = err;
